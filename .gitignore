@@ -1,0 +1,8 @@
+# Ignore everything but directories
+.fuse_*
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz

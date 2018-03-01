@@ -1,0 +1,140 @@
+%Chinese
+	\usepackage[UTF8,fontset=fandol]{ctex}
+	\xeCJKsetup{underdot = {
+		boxdepth=0pt, format=\huge, depth=.4em
+	}}
+%	\usepackage[datesep=/]{datetime2} % Use default
+	\DeclareTextFontCommand{\textbf}{\sffamily}
+%Presenting
+	\usepackage[table]{xcolor}
+	\usepackage{graphicx}
+	\usepackage[space]{grffile}
+	\usepackage[font=small,format=plain,%
+		labelfont=bf,textfont=it,%
+		singlelinecheck=false]{caption}
+	\usepackage[above]{placeins}
+%	\usepackage{float} % Cause trouble for table footnotes
+	\usepackage{wrapfig}
+	\usepackage{tabularx,array,booktabs,multirow,bigstrut}
+	\newcolumntype{C}[1]{>{\hsize=#1\hsize%
+		\centering\arraybackslash}X}
+	\newcommand{\minitab}[2][l]{%
+		\begin{tabular}{#1}#2\end{tabular}}
+	\usepackage{setspace,dcolumn}
+	\usepackage{subfig}
+	\usepackage{psfrag,epsfig}
+%MathSetting
+	\let\latexointop\ointop
+	\usepackage{amsmath,bm,amssymb,esint,extarrows}
+	\usepackage{upgreek,textcomp,mathrsfs}
+	\usepackage[only,sslash]{stmaryrd}
+	\usepackage{nicefrac,eqnarray}
+%	\usepackage{amsthm} % Enable when necessary
+%	\usepackage[mathscr]{eucal} % Enable when necessary
+	\usepackage{mathtools,physics,siunitx}
+	\usepackage{stackengine,varwidth}
+	\usepackage{tikz}
+	\usepackage{resizegather,empheq}
+	\usetagform{default}
+	\usepackage{calligra,fourier-orns}
+	% Keep \oint unchanged by esint
+	\let\ointop\undefined
+	\let\ointop\latexointop
+	% Define a scriptr 
+	\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+	\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+	\newcommand{\scriptr}{\mathcalligra{r}\,}
+	\newcommand{\rvector}{\pmb{\mathcalligra{r}}\,}
+	% Useful shorthand
+	\DeclarePairedDelimiter\ave{\langle}{\rangle}
+	\newcommand\inlineeqno{\stepcounter{equation}\ (\theequation)}
+	\newcommand{\sinc}{\operatorname{sinc}}
+	\newcommand{\mbb}[1]{\mathbb{#1}}
+	\newcommand{\mrm}[1]{\mathrm{#1}}
+	\newcommand{\mcal}[1]{\mathcal{#1}}
+	% Scaling and positioning
+	\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+	\newcommand\raisemath[2]{\raisebox{#1\depth}{${#2}$}}
+	\empheqset{box=\nicebox}
+	% Presenting
+	\newcommand*\nicebox[1]{\fbox{\hspace{1em}\addstackgap[5pt]{#1}\hspace{1em}}}
+	\sisetup{%
+		redefine-symbols=false,%
+		separate-uncertainty=true,%
+		range-phrase=\,\textasciitilde\,,%
+		arc-separator = \,}
+	\allowdisplaybreaks[2]
+%ParagraphSetting
+	\usepackage{setspace}
+	\setlength{\parskip}{.3\baselineskip}
+	\usepackage[defaultlines=2,all]{nowidow}
+	\postdisplaypenalty=50
+%PageSetting
+	\usepackage{titlesec}
+	\titleformat*{\section}{\large\bfseries}
+	\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+	\newcommand{\texstringonly}[1]{%
+		\texorpdfstring{#1}{}}
+	\usepackage[vmargin={3.5cm,4cm},hmargin=3cm,%
+		footnotesep=\baselineskip]{geometry}
+%	\usepackage[bottom]{footmisc} % Cause trouble for table footnotes
+	\usepackage{changepage}
+	% Autoref names
+	\renewcommand{\tableautorefname}{\tablename}
+	\renewcommand{\figureautorefname}{\figurename}
+	% List settings
+	\usepackage{enumitem}
+	\setlist{itemsep=0pt,topsep=0pt,labelindent=\parindent,leftmargin=0pt,itemindent=*}
+	% Some redefined lengths
+	\setlength{\headsep}{1.6\baselineskip}
+%	\setlength{\footnotesep}{3\parskip} % Use when necessary
+	% Header
+	\usepackage{fancyhdr,lastpage}
+	\pagestyle{fancy}
+%	\fancyhf{} % Clear default settings; disabled for now
+	\cfoot{--\ \thepage\,/\,\pageref{LastPage} \ --}
+	\setlength{\footskip}{2\baselineskip}
+	\renewcommand{\headrulewidth}{0.1pt}
+	\renewcommand{\headrule}{
+		\ifnum\value{page}=1\relax\else
+			\vbox to 2pt{
+			\hbox to \headwidth{\dotfill}\vss}
+		\fi}
+	\fancypagestyle{titlepagestyle}{%
+		\fancyhead{}
+		\chead{
+			\vspace{2.5\baselineskip}
+			\includegraphics[width=.75\linewidth]{../PKUPhy}}
+	}
+	% Separator
+	\newcommand{\newparagraph}{\pagebreak[3]\noindent%
+		\hfil
+		~\raisebox{-4pt}[10pt][10pt]{\decofourright~~~~~~~~\decofourleft}~ %
+		\par
+	}
+%	% Background % Use when necessary
+%	\usepackage{background} %Waterstamp package
+%	\SetBgContents{...的实验报告} %Waterstamp to prevent copying
+%	\SetBgScale{5} %Waterstamp setting
+	% Essay format
+	\renewcommand\appendixname{附录}
+	\renewcommand\abstractname{}%摘要
+	\renewcommand\tablename{表}
+	\renewcommand\figurename{图}
+	\renewcommand\refname{参考文献}
+	\makeatletter
+	\def\@pacs@name{\songti\zihao{-4}{\bf PACS码：}}
+	\def\@keys@name{\songti\zihao{-4}{\bf 关键词：}}
+	\def\Dated@name{日期：}
+	\def\Received@name{\zihao{-5}{接收} }
+	\def\Revised@name{\zihao{-5}{修订} }
+	\def\Accepted@name{\zihao{-5}{采纳} }
+	\def\Published@name{\zihao{-5}{发表} }
+	\makeatother
+	\linespread{1.5}
+	\renewcommand{\labelenumi}{\alph{enumi}.}
+	\leftmargini=20mm
+	\newcommand{\supercite}[1]{\textsuperscript{\,%
+		[\citenum{#1}]}}
+	\let\fancycite\cite
+	\renewcommand{\cite}[1]{\textup{\fancycite{#1}}}
