@@ -1,4 +1,3 @@
-# Ignore everything but directories
 .fuse_*
 *.aux
 *.bbl
@@ -6,4 +5,15 @@
 *.log
 *.out
 *.synctex.gz
+
+# beamer
+*.nav
+*.snm
+*.toc
+*.vrb
+
+# others
+svg*/
+_minted*/
+
 Zipped/

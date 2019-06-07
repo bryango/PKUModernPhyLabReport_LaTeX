@@ -1,0 +1,63 @@
+% !TeX root = experiment_talk
+%Beamer
+	\usetheme{Antibes}
+	\usecolortheme{beaver}
+%	\usefonttheme[stillsansseriflarge,%
+%		stillsansserifsmall]{serif}
+	\usefonttheme[onlymath]{serif}
+	\setbeamertemplate{enumerate items}[default]
+	\setbeamercovered{transparent}
+%	\numberwithin{equation}{section}
+	\newcommand{\nologo}[1]{{\logo{} #1}}
+%Code
+	\usepackage{minted}
+	\usemintedstyle{colorful}
+%ChineseFont
+	\usepackage{ctex}
+	\newcommand{\textkai}[1]{{\kaishu #1}}
+%PageSetting
+	\setlength{\parindent}{2em}
+	\setlength{\parskip}{.3\baselineskip}
+	%\linespread{1.0}
+	\setlength{\footnotesep}{\baselineskip} % post footnote split
+	\usepackage{ragged2e}
+%MathSetting
+	\usepackage{mathtools,amssymb,bm,mathrsfs}
+	\usetagform{default}
+%Features
+	\usepackage{wrapfig,ccicons}
+	\usepackage{animate}
+	\addtobeamertemplate{footnote}{}{\vspace{6ex}}
+%Graphics
+	\usepackage{tikz,pgfplots}
+	\pgfplotsset{compat=1.15}
+	\usetikzlibrary{arrows.meta}
+%Tweaks
+	\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+	\makeatletter
+		\setbeamertemplate{title page}[default][
+			left,colsep=-4bp,rounded=true
+		]
+		\patchcmd{\@listI}{\itemsep3\p@}{\itemsep1ex}{}{}
+		\patchcmd{\@listii}{\itemsep\parsep}{\itemsep1ex}{}{}
+		\patchcmd{\@listii}{\topsep2\p@}{\topsep1.5ex}{}{}
+	\makeatother
+%SharedCommands
+	\input{preamble.tex}
+%SectionTitle
+	\AtBeginSection[]{
+		\begin{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center,rounded=true]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+		\end{frame}
+	}
+%Logo
+	\logo{
+		\includegraphics[height=.3\textheight]{figs/penguin.pdf}~%
+		\hspace*{2em}\\
+		\vspace*{1.6\baselineskip}
+	}
