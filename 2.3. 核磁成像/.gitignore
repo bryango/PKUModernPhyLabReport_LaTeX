@@ -1,0 +1,5 @@
+*.pda
+*.zda
+data/backup/
+data/*.bmp
+ref/
