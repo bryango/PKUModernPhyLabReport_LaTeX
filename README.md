@@ -4,13 +4,13 @@ LaTeX lab report for modern physics experiments @ PKU.
 北京大学物理学院 近代物理实验报告 - 2017~2018学年
 
 ## PDF
-> [1. 电子衍射 / ediff.pdf](1.%20电子衍射/ediff.pdf)<br/>
-> [2. 扫描隧穿 / stm.pdf](2.%20扫描隧穿/stm.pdf)<br/>
-> [3. 放电激光 / laser.pdf](3.%20放电激光/laser.pdf)<br/>
-> [4. 贝塔射线 / beta.pdf](4.%20贝塔射线/beta.pdf)<br/>
-> [5. 霍尔系数 / silicon.pdf](5.%20霍尔系数/silicon.pdf)<br/>
-> [6. 扫描电镜 / sem.pdf](6.%20扫描电镜/sem.pdf)<br/>
-> [7. 康普顿散射 / compton.pdf](7.%20康普顿散射/compton.pdf)<br/>
+> [1.1. 电子衍射 / ediff.pdf](1.1.%20电子衍射/ediff.pdf)<br/>
+> [1.2. 扫描隧穿 / stm.pdf](1.2.%20扫描隧穿/stm.pdf)<br/>
+> [1.3. 放电激光 / laser.pdf](1.3.%20放电激光/laser.pdf)<br/>
+> [1.4. 贝塔射线 / beta.pdf](1.4.%20贝塔射线/beta.pdf)<br/>
+> [1.5. 霍尔系数 / silicon.pdf](1.5.%20霍尔系数/silicon.pdf)<br/>
+> [1.6. 扫描电镜 / sem.pdf](1.6.%20扫描电镜/sem.pdf)<br/>
+> [1.7. 康普顿散射 / compton.pdf](1.7.%20康普顿散射/compton.pdf)<br/>
 
 * 提供近代实验报告供大家参考 ~
 * 遵循 [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议
