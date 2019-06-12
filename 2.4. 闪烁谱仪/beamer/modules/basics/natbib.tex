@@ -1,0 +1,17 @@
+% natbib settings
+% ... compatible with APS
+
+\usepackage[sort&compress,numbers]{natbib}
+\newcommand{\supercite}[1]{\textsuperscript{\,%
+	[\citenum{#1}]%
+}}
+\let\fancycite\cite
+\renewcommand{\cite}[1]{\textup{\fancycite{#1}}}
+
+% \renewcommand\refname{参考文献}
+% \setlength{\bibsep}{1ex}
+
+%\bibliographystyle{apsrev4-1}
+%{\linespread{1.}\selectfont
+%	\bibliography{cite}
+%}

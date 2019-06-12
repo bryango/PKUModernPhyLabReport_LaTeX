@@ -3,6 +3,7 @@ LaTeX lab report for modern physics experiments @ PKU. <br/>
 北京大学物理学院 近代物理实验报告 - 2017秋 + 2019春
 
 ## PDF
+> `# git ls-files | grep -E '^[^/]+/[^/]+.pdf$'`
 > [1.1. 电子衍射 / ediff.pdf](1.1.%20电子衍射/ediff.pdf)<br/>
 > [1.2. 扫描隧穿 / stm.pdf](1.2.%20扫描隧穿/stm.pdf)<br/>
 > [1.3. 放电激光 / laser.pdf](1.3.%20放电激光/laser.pdf)<br/>
@@ -10,14 +11,14 @@ LaTeX lab report for modern physics experiments @ PKU. <br/>
 > [1.5. 霍尔系数 / silicon.pdf](1.5.%20霍尔系数/silicon.pdf)<br/>
 > [1.6. 扫描电镜 / sem.pdf](1.6.%20扫描电镜/sem.pdf)<br/>
 > [1.7. 康普顿散射 / compton.pdf](1.7.%20康普顿散射/compton.pdf)<br/>
-> 
+>
 > [2.1. 核磁共振 / nmr.pdf](2.1.%20核磁共振/nmr.pdf)<br/>
 > [2.2. 穆斯堡尔效应 / mossbauer.pdf](2.2.%20穆斯堡尔效应/mossbauer.pdf)<br/>
 > [2.3. 核磁成像 / mri.pdf](2.3.%20核磁成像/mri.pdf)<br/>
 > [2.4. 闪烁谱仪 / spectrum.pdf](2.4.%20闪烁谱仪/spectrum.pdf)<br/>
 > [2.5. 对流斑图 / convection.pdf](2.5.%20对流斑图/convection.pdf)<br/>
 > [2.6. 磁光克尔 / moke.pdf](2.6.%20磁光克尔/moke.pdf)<br/>
-> 
+>
 > 报告：[利用 Notebook 计算并记录能谱](2.4.%20闪烁谱仪/beamer/experiment_talk.pdf)
 
 * 提供近代实验报告供大家参考 ~

@@ -1,91 +1,14 @@
-%UnlimitedFonts
-	\def\hmmax{0}
-	\def\bmmax{0}
-%SVG
-	\usepackage{svg}
-%Tables
-	\usepackage{array,booktabs,tabularx,multirow}
-	\newcolumntype{C}[1]{>{\hsize=#1\hsize%
-		\centering\arraybackslash}X}
-%Math&Fonts
-	\let\latexointop\ointop
-	\usepackage{mathtools,amssymb,bm % basics
-		,physics,siunitx,slashed % physics
-		,esint,nicefrac,extarrows,mathrsfs % more symbols
-		,calligra,romannum,dsfont,fourier-orns % nice fonts
-		,eqnarray,resizegather,empheq % more envs
-		,relsize,stackengine % utils
-	}
-%	\usepackage{amsthm}
-	\usepackage[scr=esstix]{mathalfa}
-	\usepackage[only,sslash]{stmaryrd}
-	%DisplaySetup
-	\newcommand*\bbox[1]{\fbox{\hspace{1em}\addstackgap[5pt]{#1}\hspace{1em}}}
-	\empheqset{box=\bbox}
-	\mathtoolsset{showonlyrefs}
-%Utils
-	%Legacy \oint
-	\let\ointop\undefined
-	\let\ointop\latexointop
-	%Calligra
-	\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
-	\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
-	%CosmeticTweaks
-	\newcommand\inlineeqno{\stepcounter{equation}\ (\theequation)}
-	\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
-	\newcommand\raisemath[2]{\raisebox{#1\depth}{${#2}$}}
-	\newfontfamily\signature{Vladimir Script}
-	\newcommand{\newparagraph}{\pagebreak[3]
-		\noindent\hfil%
-		\raisebox{-4pt}[10pt][10pt]{\leafright~\qquad~\leafleft}%
-		\par\nopagebreak%
-	}
-%CustomCmds
-	%Brackets
-	\DeclarePairedDelimiter\ave{\langle}{\rangle}
-	\DeclarePairedDelimiterX\inprod[2]{\langle}{\rangle}{#1,#2}
-	%Basics
-	\newcommand{\mbb}[1]{\mathbb{#1}}
-	\newcommand{\mrm}[1]{\mathrm{#1}}
-	\newcommand{\mcal}[1]{\mathcal{#1}}
-	\newcommand{\mscr}[1]{\mathscr{#1}}
-	\newcommand{\tup}[1]{\textup{#1}}
-	\newcommand{\mop}[1]{\operatorname{#1}}
-	%Extras
-	\newcommand{\scriptr}{\mathcalligra{r}\,}
-	\newcommand{\rvector}{\pmb{\mathcalligra{r}}\,}
-	\newcommand{\hodgedual}{\operatorname{\star}}
-	\newcommand{\dual}{\ \xlongleftrightarrow{\ \textrm{dual}\ }\ }
-	\newcommand{\idty}{\mathds{1}}
-	\newcommand{\proj}[1]{\operatorname{%
-		proj_{\mathit{#1}}}}
-	\newcommand{\propsim}{\mathbin{\ensurestackMath{
-		\stackunder[2pt]{\propto}{\sim}
-	}}}
-	\newcommand{\textbox}[1]{\fbox{#1}}
-	\newcommand{\pdd}[1]{\operatorname{\partial_{\mathnormal{#1}}}}
-	\newcommand{\cdd}{\operatorname{D}\!}
-	\newcommand{\cdv}[1]{\operatorname{%
-		\nabla_{\!\mathit{#1}\!}}}
-	\newcommand{\ldv}[1]{\operatorname{%
-		\mcal{L}_{\!\mathit{#1}\!}}}
-	\newcommand{\ric}[1]{\operatorname{%
-		Ric}\!\pqty{#1}}
-%Hacks
-	% physics.sty <texmf-dist/tex/latex/physics/>
-	% USER: more spacing around Dirac's middle vert
-	\newcommand{\xmiddle}[1]{\mspace{1mu}\middle#1\mspace{1mu}}
-	\DeclareDocumentCommand\innerproduct{ s m g }
-	{ % Inner product
-		\IfBooleanTF{#1}
-		{ % No resize
-			\IfNoValueTF{#3}
-			{\vphantom{#2}\left\langle\smash{#2}\xmiddle\vert\smash{#2}\right\rangle}
-			{\vphantom{#2#3}\left\langle\smash{#2}\xmiddle\vert\smash{#3}\right\rangle}
-		}
-		{ % Auto resize
-			\IfNoValueTF{#3}
-			{\left\langle{#2}\xmiddle\vert{#2}\right\rangle}
-			{\left\langle{#2}\xmiddle\vert{#3}\right\rangle}
-		}
+% !TeX root = experiment_talk
+\input{modules/basics/macros.tex}
+\input{modules/preamble_base.tex}
+\input{modules/preamble_beamer.tex}
+
+% Code
+	\usepackage{minted}
+	\usemintedstyle{colorful}
+%Logo
+	\logo{
+		\includegraphics[height=.3\textheight]{figs/penguin.pdf}~%
+		\hspace*{2em}\\
+		\vspace*{1.6\baselineskip}
 	}

@@ -1,0 +1,30 @@
+% Simple macros / shorthands for LaTeX,
+% ... compatible with MathJax
+% ... loaded before mathjax.tex
+%
+% Generics
+\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\mrm}[1]{\mathrm{#1}}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\mscr}[1]{\mathscr{#1}}
+\newcommand{\tup}[1]{\textup{#1}}
+\newcommand{\mop}[1]{\operatorname{#1}}
+%
+% Utils
+\newcommand{\idty}{\mathds{1}}
+\newcommand{\proj}[1]{\mop{proj_{\mathit{#1}}}}
+\newcommand{\textbox}[1]{\fbox{#1}}
+\newcommand{\rvec}[1]{\overrightarrow{#1}}
+\newcommand{\lvec}[1]{\overleftarrow{#1}}
+%
+% Differential Geometry
+\newcommand{\hodgedual}{\mop{\star}}
+\newcommand{\cdd}{\mop{D}\!}
+\newcommand{\pdd}[1]{\mop{\partial_{\mathnormal{#1}}}}
+\newcommand{\cdv}[1]{\mop{\nabla_{\!\mathnormal{#1}\!}}}
+\newcommand{\ldv}[1]{\mop{\mcal{L}_{\!\mathnormal{#1}\!}}}
+\newcommand{\ric}[1]{\mop{Ric}\pqty{#1}}
+\newcommand{\ad}{\mop{ad}}
+%
+% Algebra
+\newcommand{\subsetnormal}{\mathrel{\triangleleft}}

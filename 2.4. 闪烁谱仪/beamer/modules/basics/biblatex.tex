@@ -1,0 +1,22 @@
+% biblatex settings
+% ... extracted from `pkuthss`
+% ... biber usage:
+%%%% !TeX TXS-program:bibliography = biber -l zh__pinyin --output-safechars %
+%%%% % 注意末尾的 %, 适用于 TeXstudio
+
+%% ... include bib:
+%\addbibresource{*.bib}
+%% ... print bib:
+%\printbibliography[heading = bibintoc]
+%% bibintoc 选项使“参考文献”出现在目录中
+%% 如果同时要使参考文献列表参与章节编号，可将“bibintoc”改为“bibnumbered”
+
+\usepackage[utf8
+%	,style=caspervector
+%	,backend=biber % caspervector 必须使用 biber 后端
+%	,sorting = ecnty % 英、中文献排序，对比 none, centy
+]{biblatex}
+% 按学校要求设定参考文献列表中的条目之内及之间的距离
+\setlength{\bibitemsep}{3bp}
+% linespread 值的计算过程可以参考 pkuthss.cls
+\renewcommand*{\bibfont}{\zihao{5}\linespread{1.27}\selectfont}

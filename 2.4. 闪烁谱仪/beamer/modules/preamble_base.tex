@@ -1,0 +1,141 @@
+% Unlimited fonts
+	\def\hmmax{0}
+	\def\bmmax{0}
+% Utils
+	\usepackage{uri} % \arxiv
+	\usepackage{ccicons} % creative commons
+	\usepackage[datesep=/]{datetime2} % modify \today
+	\usepackage[space]{grffile} % file name fix
+	\PassOptionsToPackage{hyphens}{url}
+	\usepackage{etoolbox,environ}
+% Page
+	% parskip backup
+	\newlength{\parskipbackup}
+	\setlength{\parskipbackup}{\parskip}
+	% parskip setting
+	\setlength{\parskip}{.3\baselineskip}
+	% parskip backup
+	\newlength{\parskipnorm}
+	\setlength{\parskipnorm}{\parskip}
+	% footnote
+	\interfootnotelinepenalty=10000 % forbid footnote spanning pages
+% Chinese
+	\usepackage[UTF8
+		,heading=false
+	]{ctex}
+	\newcommand{\textkai}[1]{{\kaishu #1}}
+% Presentation
+	\usepackage{graphicx}
+%	\usepackage{wrapfig,subfig}
+	\usepackage{svg}
+	\usepackage[export]{adjustbox}
+	\usepackage[above]{placeins} % \FloatBarrier
+	\usepackage{tikz}
+%	\usepackage{tikz-cd} % Commutative diagram
+%	\usepackage{tkz-euclide} % Euclidaen geometry
+	\usetikzlibrary{arrows.meta}
+% Code
+%	\usepackage{minted}
+%	\usemintedstyle{colorful}
+% Tables
+	\usepackage{booktabs,tabularx,multirow,bigstrut}
+%	\usepackage{dcolumn}
+	\newcolumntype{C}[1]{>{%
+		\hsize=#1\hsize\centering\arraybackslash%
+	}X}
+	\newcolumntype{W}[1]{>{%
+		\hsize=#1\hsize\arraybackslash%
+	}X}
+	\newcolumntype{^}{>{\rowstyle}}
+	\newcommand{\setrowstyle}[1]{%
+		\gdef\rowstyle{#1}%
+		#1\ignorespaces%
+	}
+	\newcolumntype{~}{>{\global\let\rowstyle\relax}}
+% Math & Fonts
+	\let\latexointop\ointop
+	\usepackage{mathtools,amssymb,bm % basics
+		,physics,siunitx,slashed % physics
+		,esint,nicefrac,extarrows,mathrsfs % more symbols
+		,calligra,romannum,dsfont,fourier-orns % nice fonts
+%		,upgreek,textcomp % more fonts
+		,eqnarray,resizegather,empheq % more envs
+		,relsize,stackengine % utils
+	}
+%	\usepackage{wasysym}
+%	\usepackage{amsthm}
+	\usepackage[g]{esvect}
+%	\usepackage[mathscr]{eucal}
+	\usepackage[scr=esstix]{mathalfa}
+	\usepackage[only,sslash]{stmaryrd}
+	% math display
+	\newcommand*\nicebox[1]{%
+		\fbox{\hspace{1em}\addstackgap[5pt]{#1}\hspace{1em}}%
+	}
+	\empheqset{box=\nicebox}
+	\mathtoolsset{showonlyrefs}
+	\numberwithin{equation}{section}
+	\allowdisplaybreaks[2]
+	\sisetup{%
+		redefine-symbols=false
+		,separate-uncertainty=true
+		,range-phrase=\,\textasciitilde\,
+		,arc-separator=\,
+	}
+% Tweaks
+	% math line spacing
+	\newlength{\djot}
+	\setlength{\djot}{\jot}
+	\newcommand{\restorejot}{\setlength{\jot}{\djot}}
+	% legacy \oint
+	\let\ointop\undefined
+	\let\ointop\latexointop
+	% calligra
+	\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+	\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+	% cosmetics
+	\newcommand\inlineeqno{\stepcounter{equation}\ (\theequation)}
+	\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+	\newcommand\raisemath[2]{\raisebox{#1\depth}{${#2}$}}
+% Commands
+	% brackets
+	\DeclarePairedDelimiter\aqty{\langle}{\rangle}
+	\DeclarePairedDelimiterX\inprod[2]{\langle}{\rangle}{#1,#2}
+	\newcommand{\ave}[1]{\aqty{#1}}
+	% extras
+	\newcommand{\scriptr}{\mathcalligra{r}\,}
+	\newcommand{\rvector}{\pmb{\mathcalligra{r}}\,}
+	\newcommand{\propsim}{\mathbin{\ensurestackMath{
+		\stackunder[2pt]{\propto}{\sim}
+	}}}
+	\newcommand{\perc}[1]{\SI{#1}{\percent}}
+	\newcommand{\longtwoheadrightarrow}{\mathrel{
+		\begin{tikzpicture}
+		\path [draw,-{
+			>[length=.5ex,width=1.2ex]
+			>[length=.5ex,width=1.2ex]}]%
+				(0,0) -- (.6,0);
+		\end{tikzpicture}
+	}}
+	\newcommand{\texstringonly}[1]{%
+		\texorpdfstring{#1}{}%
+	}
+% Hacks
+	\usepackage{xparse}
+	% physics.sty <texmf-dist/tex/latex/physics/>
+	% USER: more spacing around Dirac's middle vert
+	\newcommand{\xmiddle}[1]{\mspace{1mu}\middle#1\mspace{1mu}}
+	\DeclareDocumentCommand\innerproduct{ s m g }
+	{ % Inner product
+		\IfBooleanTF{#1}
+		{ % No resize
+			\IfNoValueTF{#3}
+			{\vphantom{#2}\left\langle\smash{#2}\xmiddle\vert\smash{#2}\right\rangle}
+			{\vphantom{#2#3}\left\langle\smash{#2}\xmiddle\vert\smash{#3}\right\rangle}
+		}
+		{ % Auto resize
+			\IfNoValueTF{#3}
+			{\left\langle{#2}\xmiddle\vert{#2}\right\rangle}
+			{\left\langle{#2}\xmiddle\vert{#3}\right\rangle}
+		}
+	}

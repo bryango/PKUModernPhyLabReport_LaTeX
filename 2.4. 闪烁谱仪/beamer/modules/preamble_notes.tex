@@ -1,0 +1,107 @@
+% Title
+	\usepackage{titling}
+	\setlength{\droptitle}{-2cm}
+	\pretitle{\vspace{-5ex}%
+		\begin{flushleft}\LARGE\bfseries%
+	}
+	\posttitle{
+		\hfill\Large\ccbyncsajp
+		\par\end{flushleft}\hrule%
+	}
+	\preauthor{\vspace{-1.2ex}%
+		\flushleft\itshape%
+	}
+	\postauthor{\par}
+	\predate{}
+	\postdate{\vspace{-1.5ex}}
+%	% section titles
+%	\usepackage{titlesec}
+%	\titleformat*{\section}{\large\bfseries}
+% Utils
+	\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+	\usepackage[table]{xcolor}
+% Page
+	\usepackage[
+		vmargin=.135\paperheight % 4cm
+		,hmargin=.135\paperwidth % 3cm
+	]{geometry}
+	\usepackage{changepage}
+%	\setlength{\headsep}{1.2\baselineskip}
+	% no widow
+	\usepackage[defaultlines=2,all]{nowidow}
+	\postdisplaypenalty=500
+	\usepackage{enumitem} % incompatible with beamer
+	\setlist{itemsep=0pt,topsep=0pt
+		,labelindent=\parindent
+		,leftmargin=0pt,itemindent=*
+	}
+	% footnote
+	\geometry{footnotesep=.8\baselineskip} % pre footnote split
+	\setlength{\footnotesep}{2.5\parskip} % post footnote parskip
+	\usepackage[bottom,splitrule]{footmisc}
+	% justification
+	\usepackage{ragged2e}
+%	\flushbottom
+%	\pagenumbering{arabic}
+% Chinese
+	% CJK underdot - incompatible with beamer
+	\xeCJKsetup{underdot = {
+		boxdepth=0pt, format=\huge, depth=.3em
+	}}
+	\newcommand{\cjkdot}[1]{\CJKunderdot{#1}}
+%	\DeclareTextFontCommand{\textbf}{\sffamily}
+% Toggles - etoolbox
+	\newtoggle{draftMode}
+	\newtoggle{publishMode}
+	\newcommand{\hideInDraft}[1]{
+		\iftoggle{draftMode}{}{#1}
+	}
+	\newcommand{\hideWhenPublish}[1]{
+		\iftoggle{publishMode}{}{#1}
+	}
+% Captions
+	\usepackage{caption}
+	\captionsetup{labelfont+=bf
+		,margin=3em
+		,parskip=.3\baselineskip
+%		,format=plain
+%		,font+=small
+%		,textfont+=it
+%		,singlelinecheck=false
+	}
+	% ref name
+	\renewcommand{\tableautorefname}{\tablename}
+	\renewcommand{\figureautorefname}{\figurename}
+% Personalizations
+	\newfontfamily\signature{Vladimir Script}
+	\newcommand{\midquote}{\signature May the Force be with you}
+	\newcommand{\newparagraph}{\pagebreak[3]
+		\noindent%
+%		\hrulefill%
+		\hfil%
+		~\raisebox{-4pt}[10pt][10pt]{%
+			\leafright~~\midquote~~\leafleft%
+		}~%
+%		\hrulefill%
+		\par\nopagebreak%
+	}
+% Header
+	\usepackage{fancyhdr,lastpage}
+%	\pagestyle{fancy}
+%	\fancyhf{} % clear default settings
+%	\lhead{
+%		\hspace{.2em}
+%		% logo
+%		\vspace{-3ex}
+%	}
+%	\cfoot{--\ \thepage\,/\,\pageref{LastPage} \ --}
+%	\renewcommand{\headrulewidth}{0.1pt}
+%	\renewcommand{\headrule}{\ifnum\value{page}=1\relax\else
+%		\vbox to 2pt{\hbox to \headwidth{\dotfill}\vss}
+%	\fi}
+%	\fancypagestyle{titlepagestyle}{%
+%		\fancyhead{}
+%		\chead{
+%			\vspace{2.5\baselineskip}
+%			% logo
+%	}

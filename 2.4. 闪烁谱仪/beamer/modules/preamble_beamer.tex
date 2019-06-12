@@ -1,4 +1,5 @@
-% !TeX root = experiment_talk
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TeX root = INPUT_ROOT_DOCUMENT
 %Beamer
 	\usetheme{Antibes}
 	\usecolortheme{beaver}
@@ -9,12 +10,6 @@
 	\setbeamercovered{transparent}
 %	\numberwithin{equation}{section}
 	\newcommand{\nologo}[1]{{\logo{} #1}}
-%Code
-	\usepackage{minted}
-	\usemintedstyle{colorful}
-%ChineseFont
-	\usepackage{ctex}
-	\newcommand{\textkai}[1]{{\kaishu #1}}
 %PageSetting
 	\setlength{\parindent}{2em}
 	\setlength{\parskip}{.3\baselineskip}
@@ -28,12 +23,8 @@
 	\usepackage{wrapfig,ccicons}
 	\usepackage{animate}
 	\addtobeamertemplate{footnote}{}{\vspace{6ex}}
-%Graphics
-	\usepackage{tikz,pgfplots}
-	\pgfplotsset{compat=1.15}
-	\usetikzlibrary{arrows.meta}
 %Tweaks
-	\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+	% require etoolbox in `preamble_base`
 	\makeatletter
 		\setbeamertemplate{title page}[default][
 			left,colsep=-4bp,rounded=true
@@ -42,8 +33,6 @@
 		\patchcmd{\@listii}{\itemsep\parsep}{\itemsep1ex}{}{}
 		\patchcmd{\@listii}{\topsep2\p@}{\topsep1.5ex}{}{}
 	\makeatother
-%SharedCommands
-	\input{preamble.tex}
 %SectionTitle
 	\AtBeginSection[]{
 		\begin{frame}
@@ -57,7 +46,7 @@
 	}
 %Logo
 	\logo{
-		\includegraphics[height=.3\textheight]{figs/penguin.pdf}~%
-		\hspace*{2em}\\
-		\vspace*{1.6\baselineskip}
+%		\includegraphics[height=.3\textheight]{INPUT_IMAGE_HERE}~%
+%		\hspace*{2em}\\
+%		\vspace*{1.6\baselineskip}
 	}
