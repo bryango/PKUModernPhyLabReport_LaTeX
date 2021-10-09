@@ -1,11 +1,18 @@
 # PKUModernPhyLabReport_LaTeX
-LaTeX lab report for modern physics experiments @ PKU. <br/>
+LaTeX lab report for modern physics experiments @ PKU <br/>
 北京大学物理学院 近代物理实验报告 - 2017秋 + 2019春
+
+## ⚠️ 声明
+
+此系列报告已知存在大量错误！请谨慎参考。<br/>
+本人早已逃离实验物理，修正这些错误将给本人带来巨大的痛苦，故暂且搁置。不过欢迎 pull requests!
+
+另：本项目大量参考了 [chaserhkj/ModPhyLab](https://github.com/chaserhkj/ModPhyLab), 特此致谢！
 
 ## PDF
 > `# git ls-files | grep -E '^[^/]+/[^/]+.pdf$'`
 >
-> [1.1. 电子衍射 / ediff.pdf](1.1.%20电子衍射/ediff.pdf)<br/>
+> [1.1. 电子衍射 / ediff.pdf](1.1.%20电子衍射/ediff.pdf) ⚠️ IV.B. 有误！<br/>
 > [1.2. 扫描隧穿 / stm.pdf](1.2.%20扫描隧穿/stm.pdf)<br/>
 > [1.3. 放电激光 / laser.pdf](1.3.%20放电激光/laser.pdf)<br/>
 > [1.4. 贝塔射线 / beta.pdf](1.4.%20贝塔射线/beta.pdf)<br/>
@@ -22,12 +29,9 @@ LaTeX lab report for modern physics experiments @ PKU. <br/>
 >
 > 报告：[利用 Notebook 计算并记录能谱](2.4.%20闪烁谱仪/beamer/experiment_talk.pdf)
 
-* 提供近代实验报告供大家参考 ~
 * 遵循 [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议
 * 请使用 XeLaTeX 编译，编辑器选用 UTF-8 编码
 * 导言区（preamble）略微混乱，有许多曾经用过没有删掉的宏包，欢迎精简
-
-P.S. 项目参考了 [chaserhkj/ModPhyLab](https://github.com/chaserhkj/ModPhyLab), 特此表示感谢～
 
 ## 依赖关系
 * 所有报告共用根目录下的 `BibStyle/` 和 `PKUPhy.png`
